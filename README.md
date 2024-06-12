@@ -4,6 +4,6 @@ This smart contract provides a simple framework for managing a token system wher
 
 # Description
 Public Variables
-tokenName: It is the name of the token.
-tokenAbbrv: It is the abbreviation of the token name.
-totalSupply: It is the total number of tokens in existence.
+#tokenName: It is the name of the token.
+#tokenAbbrv: It is the abbreviation of the token name.
+#totalSupply: It is the total number of tokens in existence.
