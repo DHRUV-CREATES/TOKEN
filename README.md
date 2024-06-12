@@ -35,13 +35,13 @@ This smart contract provides a simple framework for managing a token system wher
             to the amount that is supposed to be burned.
      */
 
-     // MyToken contract represents a simple token system with minting and burning capabilities.
-contract MyToken {
-    // Public variables
-    string public name = "Dhruv"; // Name of the token
-    string public symbol = "DRV"; // Symbol or abbreviation of the token
-    uint256 public totalSupply; // Total supply of the token
-
+    
+     // MyToken contract represents a simple token system with minting and burning capabilities.contract MyToken {
+         // public variables here
+         string public tokenName = "Dhruv"; // NAME OF THE TOKEN
+         string public tokenAbbrv = "DRV"; //SYMBOL OF THE TOKEN 
+         uint256 public totalSupply = 0; // TOTAL SUPPLY OF THE TOKEN
+         
     // Mapping to track balances of addresses
     mapping(address => uint256) public balances;
 
@@ -70,27 +70,26 @@ contract MyToken {
     }
 }
 
-####HOW TO RUN IN REMIX 
+# HOW TO RUN IN REMIX 
 1. **Create a New File**
-   -In the file explorer panel, click on the "+" icon to create a new file and name it MyToken.sol.
+   - In the file explorer panel, click on the "+" icon to create a new file and name it MyToken.sol.
 
 2 **Copy the Contract Code** 
-   -Copy the simplified contract code provided earlier and paste it into MyToken.sol.
-
-
+  - Copy the simplified contract code provided earlier and paste it into MyToken.sol.
+    
 3 **Compile the Contract** 
-   -In the Remix sidebar, go to the "Solidity Compiler" tab. 
-   -Select the correct version of Solidity (0.8.18 in this case). 
-   -Click on "Compile MyToken.sol" to compile the contract.
+  - In the Remix sidebar, go to the "Solidity Compiler" tab. 
+  - Select the correct version of Solidity (0.8.18 in this case). 
+  - Click on "Compile MyToken.sol" to compile the contract.
 
 4 **Deploy the Contract** 
-    -Switch to the "Deploy & Run Transactions" tab. 
-    -Ensure that the correct contract (MyToken.sol) is selected. 
-    -Choose the environment (e.g., JavaScript VM for a quick test). 
-    -Click on "Deploy" to deploy the contract.
+  - Switch to the "Deploy & Run Transactions" tab. 
+  - Ensure that the correct contract (MyToken.sol) is selected. 
+  - Choose the environment (e.g., JavaScript VM for a quick test). 
+  - Click on "Deploy" to deploy the contract.
 
 5 **Interact with the Contract** 
-   - Once deployed, you can interact with the contract using the provided functions (mint and burn).
+  - Once deployed, you can interact with the contract using the provided functions (mint and burn).
 
 Mint Tokens: Use the mint function to create new tokens. Enter the recipient address and the amount of tokens to mint.
 Burn Tokens: Use the burn function to destroy tokens. Enter your address (or any address with tokens) and the amount of tokens to burn.
