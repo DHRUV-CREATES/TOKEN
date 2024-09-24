@@ -16,35 +16,30 @@ pragma solidity 0.8.18;
 */
 
 
-// MyToken contract represents a simple token system with minting and burning capabilities.contract MyToken {
-    // public variables here
-    string public tokenName = "Dhruv"; // NAME OF THE TOKEN
-    string public tokenAbbrv = "DRV"; //SYMBOL OF THE TOKEN 
-    uint256 public totalSupply = 0; // TOTAL SUPPLY OF THE TOKEN
-    
+
+contract MyToken {
+   // Public variables
+string public tokenName = "Dhruv"; 
+string public tokenAbbrv = "DRV"; 
+uint256 public totalSupply;
+
 // Mapping to track balances of addresses
 mapping(address => uint256) public balances;
 
-// Events to log token minting and burning
-event Mint(address indexed to, uint256 amount);
-event Burn(address indexed from, uint256 amount);
+// Events to log token minting and burning 
+event Mint (address indexed to, uint256 amount);
+event Burn (address indexed from, uint256 amount);
 
-// Constructor to initialize the contract
-constructor() {
-   totalSupply = 0;
-}
+// Mint function to create new tokens and increase the total supply and the balance of a specified address 
+function mint (address to, uint256 amount) public {
+totalSupply += _amount;
+balances [_to] += __amount; 
+emit Mint(_to, _amount);
 
-// Mint function to create new tokens and increase the total supply and the balance of a specified address
-function mint(address _to, uint256 _amount) public {
-   totalSupply += _amount;
-   balances[_to] += _amount;
-   emit Mint(_to, _amount);
-}
-
-// Burn function to destroy tokens and decrease the total supply and the balance of a specified address
-function burn(address _from, uint256 _amount) public {
-   require(balances[_from] >= _amount, "Insufficient balance"); // Check if the balance is sufficient
-   totalSupply -= _amount;
-   balances[_from] -= _amount;
-   emit Burn(_from, _amount);
+// Burn function to destroy tokens and decrease the total supply and the balance of a specified address 
+function burn (address _from, uint256 amount) public {
+require (balances [_from] >= _amount, "Insufficient balance"); // Check if the balance is sufficient
+totalSupply = _amount;
+balances[_from] -= _amount;
+emit Burn(_from, _amount);
 }
