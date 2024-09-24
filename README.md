@@ -38,30 +38,30 @@ This smart contract provides a simple framework for managing a token system wher
     
     contract MyToken {
    // Public variables
-string public tokenName = "Dhruv"; 
-string public tokenAbbrv = "DRV"; 
-uint256 public totalSupply;
-
-// Mapping to track balances of addresses
-mapping(address => uint256) public balances;
-
-// Events to log token minting and burning 
-event Mint (address indexed to, uint256 amount);
-event Burn (address indexed from, uint256 amount);
-
-// Mint function to create new tokens and increase the total supply and the balance of a specified address 
-function mint (address to, uint256 amount) public {
-totalSupply += _amount;
-balances [_to] += __amount; 
-emit Mint(_to, _amount);
-
-// Burn function to destroy tokens and decrease the total supply and the balance of a specified address 
-function burn (address _from, uint256 amount) public {
-require (balances [_from] >= _amount, "Insufficient balance"); // Check if the balance is sufficient
-totalSupply = _amount;
-balances[_from] -= _amount;
-emit Burn(_from, _amount);
-}
+     string public tokenName = "Dhruv";
+     string public tokenAbbrv = "DRV";
+     uint256 public totalSupply;
+     
+     // Mapping to track balances of addresses
+     mapping(address => uint256) public balances;
+     
+     // Events to log token minting and burning
+     event Mint (address indexed to, uint256 amount);
+     event Burn (address indexed from, uint256 amount);
+     
+     // Mint function to create new tokens and increase the total supply and the balance of a specified address
+     function mint (address to, uint256 amount) public {
+     totalSupply += _amount;
+     balances [_to] += __amount;
+     emit Mint(_to, _amount);
+     
+     // Burn function to destroy tokens and decrease the total supply and the balance of a specified address
+     function burn (address _from, uint256 amount) public {
+     require (balances [_from] >= _amount, "Insufficient balance"); // Check if the balance is sufficient
+     totalSupply = _amount;
+     balances[_from] -= _amount;
+     emit Burn(_from, _amount);
+     }
 
 # HOW TO RUN IN REMIX 
 1. **Create a New File**
